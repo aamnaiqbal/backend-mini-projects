@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-gray-100 p-12">
+      <a href="/" class="text-blue-500 hover:underline mb-8 inline-block"
+        >Go back to home</a
+      >
+      <div class="form py-12 mx-8">
+        <form action="/edit/<%= fileName %>" method="post">
+          <input
+            type="text"
+            name="prevFileName"
+            placeholder="Previous name of file"
+            class="block w-1/4 border py-2 px-5 rounded-lg outline-none"
+            value="<%= fileName %>"
+            readonly
+          />
+          <input
+            type="text"
+            name="newFileName"
+            placeholder="New name of file"
+            class="block w-1/4 border py-2 px-5 rounded-lg outline-none mt-2"
+          />
+          <button
+            type="submit"
+            class="block bg-blue-500 text-white mt-2 p-2 rounded-lg"
+          >
+            Update fileName
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
